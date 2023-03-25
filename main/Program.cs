@@ -22,9 +22,9 @@ void PrintStringArray(string[] array)
 string[] GetStringArrayFromUser(string elements)
 {
     string[] array = elements.Split(' ').Select(x => x).ToArray();
+
     return array;
 }
-Console.WriteLine("Введите любые строки через пробел: ");
 
 // -----------------------------------------------------------------------------------
 
@@ -44,3 +44,14 @@ string[] DelElementsHigherThree(string[] array)
 } 
 
 // -----------------------------------------------------------------------------------
+
+Console.WriteLine("Введите любые строки через пробел: ");
+string elements = Console.ReadLine(); 
+
+Console.Write("Ваш массив: ");
+string[] firstArray = GetStringArrayFromUser(elements); 
+PrintStringArray(firstArray); 
+
+Console.Write("Измененный массив: ");
+string[] secondElements = DelElementsHigherThree(firstArray); 
+PrintStringArray(secondElements);
